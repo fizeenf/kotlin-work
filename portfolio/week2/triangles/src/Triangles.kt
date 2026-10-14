@@ -8,14 +8,24 @@ typealias Triangle = Triple<Double,Double,Double>
 // Add isValidTriangle() and triangleArea() functions here
 
 fun isValidTriangle( tri: Triangle ) : Boolean {
-    
 
-
-
-return false
-}
+    val a = tri.first.toDouble()
+    val b = tri.second.toDouble()
+    val c = tri.third.toDouble()
+    val check = a < (b + c) && b < (a + c) && c < (a + b)
+   
+    return check
+} 
 
 fun triangleArea( tri: Triangle ) : Double {
+    
+    val a = tri.first
+    val b = tri.second
+    val c = tri.third
+    val s =  (a + b + c) / 2 
+    val area =  sqrt( s * ( s- a) * (s-b) * (s-c) ) 
 
-return 0.0
+return area
 }
+
+   
