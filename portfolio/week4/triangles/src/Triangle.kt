@@ -5,10 +5,18 @@ import kotlin.math.sqrt
 
 class Triangle(val sideA: Double, val sideB: Double, val sideC: Double) {
     init {
-        if (sideA < (sideB + sideC) && sideB < (sideA + sideC) && sideC < (sideA + sideB) &&  sideA > 0  &&  sideB > 0 && sideC > 0) {
+        require(sideA > 0  &&  sideB > 0 && sideC > 0) {
+            
+            "Triangle must be positive"
+        }
+            
+        require(
+        sideA < (sideB + sideC) && 
+        sideB < (sideA + sideC) &&
+        sideC < (sideA + sideB)
+        ) {
 
-      } else {
-        throw IllegalArgumentException("triangle not valid")
+          "Triangle not valid"
     }
  }
 val perimeter: Double
@@ -21,7 +29,7 @@ val area: Double
     get() = sqrt(semiPerimeter * ( semiPerimeter - sideA)* (semiPerimeter - sideB) * (semiPerimeter - sideC))
 
 override fun toString() : String {
-    return "Triangle ($sideA, $sideB, $sideC)"
+    return "Triangle($sideA, $sideB, $sideC)"
   }
 }
 
