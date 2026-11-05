@@ -1,4 +1,8 @@
+
 package comp2850.banking 
+
+const val MAX_OVERDRAFT = 100
+
 
 class StudentAccount(holder: String) : BankAccount(holder) {
 
